@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maison Matrix | Architectural Studio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🏛️</text></svg>">
+</head>
+<body>
+
+   <nav class="main-navbar">
+    <div class="nav-logo"><a href="index.html" style="color: inherit; text-decoration: none;">MAISON MATRIX</a></div>
+    
+    <ul class="nav-links" id="nav-menu-links">
+        <li><a href="#studio">Studio</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#exhibition">Exhibition</a></li>
+    </ul>
+    
+    <div class="nav-actions">
+        <a href="contact.html" class="nav-action-btn">Contact</a>
+        
+        <div class="mobile-menu-toggle" id="mobile-toggle-btn" style="margin-left: 15px;">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+    </div>
+</nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <p>Bespoke Architectural Concepts & Spatial Design</p>
+            
+            <h1>Bring Your Vision To Life</h1>
+            
+            <button class="hero-btn" onclick="window.location.href='contact.html'">Commission Your Project</button>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll Down</span>
+            <div class="scroll-line"></div>
+        </div>
+    </header>
+
+    <main class="animation-trigger-zone">
+        <div class="sticky-canvas-container">
+            
+            <div id="cinematic-text-overlay" class="text-zone-hidden">
+                <span id="cinematic-tag">EXTERIOR SEQUENCE</span>
+                <h2 id="cinematic-title">Dive into the beautiful exterior and interior design.</h2>
+                <div class="action-wrapper">
+                    <a href="#" id="explore-section-btn" class="explore-btn">Explore Here</a>
+                </div>
+            </div>
+
+            <canvas id="video-scrub-canvas"></canvas>
+        </div>
+    </main>
+
+<footer class="matrix-luxury-footer">
+    <div class="footer-wrapper">
+        <div class="footer-branding">
+            <h2>MAISON MATRIX</h2>
+            <p>Architectural frameworks driven by absolute precision. Engineering structural excellence to redefine modern typologies and spatial boundaries.</p>
+        </div>
+        
+        <hr class="footer-divider">
+
+        <div class="footer-core">
+            <div class="footer-copyright">
+                &copy; 2026 MAISON MATRIX | ALL RIGHTS RESERVED.
+            </div>
+            <div class="footer-social-matrix">
+                <a href="http://linkedin.com/" target="_blank" aria-label="LinkedIn" class="social-icon-link">
+                    <i class="fa-brands fa-linkedin-in"></i>
+                </a>
+                <a href="https://github.com/" target="_blank" aria-label="GitHub" class="social-icon-link">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram" class="social-icon-link">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtn = document.getElementById('mobile-toggle-btn');
+            const menuLinks = document.getElementById('nav-menu-links');
+
+            if (toggleBtn && menuLinks) {
+                toggleBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    menuLinks.classList.toggle('mobile-active');
+                });
+
+                document.addEventListener('click', (e) => {
+                    if (!menuLinks.contains(e.target) && !toggleBtn.contains(e.target)) {
+                        menuLinks.classList.remove('mobile-active');
+                    }
+                });
+            }
+        });
+    </script>
+    <style>
+@media (max-width: 768px) {
+    .main-navbar {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+    }
+    .main-navbar .nav-logo {
+        margin-right: auto !important;
+    }
+    .main-navbar .nav-actions {
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px !important;
+        order: 2 !important; 
+    }
+    .main-navbar .nav-action-btn {
+        order: 1 !important; 
+    }
+    .mobile-menu-toggle {
+        display: block !important;
+        order: 2 !important; 
+    }
+}
+</style>
+</body>
+</html>
