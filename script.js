@@ -87,7 +87,7 @@ const updateStoryText = (frameIndex) => {
 
 const getFramePath = (index) => {
     const paddedIndex = String(index).padStart(3, '0');
-    return `../public/assets/frames/frame_${paddedIndex}.jpg`;
+    return `assets/frames/frame_${paddedIndex}.jpg`;
 };
 
 const preloadFrames = () => {
