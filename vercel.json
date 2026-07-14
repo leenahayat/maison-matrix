@@ -12,11 +12,8 @@
       "dest": "server.js"
     },
     {
-      "handle": "filesystem"
-    },
-    {
       "src": "/(.*)",
-      "dest": "client/public/$1"
+      "dest": "/$1"
     }
   ]
 }

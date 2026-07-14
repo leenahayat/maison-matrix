@@ -3,6 +3,7 @@ global.crypto = require('crypto');
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path'); 
 const inquiryRoutes = require('./routes/inquiryRoutes');
 
 const app = express();
@@ -19,6 +20,12 @@ mongoose.connect(CLOUD_MONGO_URI)
     .catch(err => console.log("Database Connection Error:", err));
 
 app.use('/api', inquiryRoutes);
+
+app.use(express.static(__dirname)); 
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'index.html'));
+});
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
